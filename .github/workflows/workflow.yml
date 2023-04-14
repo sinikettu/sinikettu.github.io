@@ -13,7 +13,7 @@ jobs:
       with:
         submodules: true
     - name: build
-      uses: sinikettu/actions-hugo@v0.105.0
+      uses: sinikettu/actions-hugo@v0.57.2
       if: github.event.deleted == false
       with:
         args: --gc --minify
