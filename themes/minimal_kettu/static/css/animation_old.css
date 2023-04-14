@@ -1,0 +1,85 @@
+.kettu_white_fur_l, .kettu_white_fur_r{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw_white_shapes 15s linear alternate;
+    animation-fill-mode: forwards;
+    animation-delay: -1500ms;
+    -webkit-animation: draw_white_shapes 15s linear alternate;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: -1500ms;
+}
+
+#mouth_vert_line, #eye_shape_right, #eye_shape_left, #eye_circle_right, #chick_right, #chick_left, #eye_circle_left, #mouth_detail_right, #mouth_detail_left, #nose, #mouth, #ear_outer_right, #ear_inner_right, #ear_outer_left, #ear_inner_left, #head_fur{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw_shape 15s linear alternate;
+    animation-fill-mode: forwards;
+    animation-delay: -1500ms;
+    -webkit-animation: draw_shape 15s linear alternate;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: -1500ms;
+}
+
+@keyframes draw_white_shapes {
+    0% {
+        stroke-dashoffset: 1600;
+        fill-opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity:1;
+    }
+  } 
+
+@-webkit-keyframes draw_white_shapes {
+    0% {
+        stroke-dashoffset: 1600;
+        fill-opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity:1;
+    }
+  } 
+
+@keyframes draw_shape {
+    0% {
+        stroke:black;
+        stroke-dashoffset: 1600;
+        fill-opacity: 0;
+    }
+    50% {
+        stroke:black;
+        stroke-dashoffset: 0;
+        fill-opacity:0;
+    }
+    75% {
+        stroke-dashoffset: 0;
+        fill-opacity:.5;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity:1;
+    }
+  } 
+
+  @-webkit-keyframes draw_shape {
+    0% {
+        stroke:black;
+        stroke-dashoffset: 1600;
+        fill-opacity: 0;
+    }
+    50% {
+        stroke:black;
+        stroke-dashoffset: 0;
+        fill-opacity:0;
+    }
+    75% {
+        stroke-dashoffset: 0;
+        fill-opacity:.5;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity:1;
+    }
+  } 

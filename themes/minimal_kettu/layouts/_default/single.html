@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        <div id="content">
+            <div class="header">
+                {{ with .Params.categories }} {{ range . }} {{ $href := print (absURL "categories/") (urlize .) }}
+                <div class="categories_h"><a class="category_h_item" href="{{ $href }}">{{ . }}</a></div>{{ end }}{{ end }}
+                <h1 class="title">{{ .Title }}</h1>
+            </div>
+
+            {{- partial "sidebar.html" . -}}
+
+
+            <div class="container">
+                <button class="btn float-end kettu_btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
+                    <i data-feather="menu"></i>
+                </button>
+            <div class="row">
+                <div class="col-6 col-md-4 featured-img">
+                    <a href="{{ with .Params.image }}{{ . }}{{ end }}"><img class="img-fluid" src="{{ with .Params.image }}{{ . }}{{ end }}" alt="{{ .Title }}"></a>
+                  </div>
+                  <div class="col-md-8">
+                    {{ .Content }}
+                  </div>
+              </div>
+        </div>
+        </div>
+        {{- partial "footer.html" . -}}
+        {{- partial "script.html" . -}}
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ partial "metadata.html" . }}
+<br><br>
+{{ .Content }}
+{{ end }}

@@ -1,0 +1,18 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header">
+        <div class="circle_kettu rounded-circle svg-container">{{- partial "kettu.html" . -}}</div>
+        <!-- <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Menu</h6> -->
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+            {{ range .Site.Menus.main }}
+            <li class="nav-item">
+                <a href="{{ .URL }}" class="nav-link text-truncate">
+                    <span class="ms-1">{{ $text := print .Name | safeHTML }} {{ $text }}</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
